@@ -1,37 +1,34 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useTexture } from "@react-three/drei";
 
 export default function Sun() {
   const sunRef = useRef();
+  const sunTexture = useTexture("/textures/sun_texture.jpg");
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (sunRef.current) {
-      sunRef.current.rotation.y += delta * 2;
+      sunRef.current.rotation.y += delta * 0.00078;
     }
   });
   return (
     <group>
-      {/*glowing sphere*/}
+      {/*glowing sphere with texture*/}
       <mesh ref={sunRef}>
-        <sphereGeometry args={[6, 16, 16]} />
+        <sphereGeometry args={[1, 64, 64]} />
         <meshStandardMaterial
-          emissive={"#ffcc33"}
-          emissiveIntensity={5}
-          color={"#000000"}
+          map={sunTexture}
+          emissive={"#ffa724"}
+          emissiveIntensity={2}
         />
-      </mesh>
-      {/* illuminate nearby objects*/}
-      <pointLight
-        position={[0, 0, 0]}
-        color="white"
-        intensity={100}
-        distance={500}
-        decay={2}
-      />
-      {/* temporary object */}
-      <mesh ref={sunRef} position={[20, 0, 0]}>
-        <boxGeometry args={[2, 2, 2]} />
-        <meshStandardMaterial color="white" />
+        <ambientLight intensity={1} />
+        <pointLight
+          position={[0, 0, 0]}
+          color="white"
+          intensity={100}
+          distance={1000}
+          decay={2}
+        />
       </mesh>
     </group>
   );
