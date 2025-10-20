@@ -15,7 +15,7 @@ export default function Sun() {
     <group>
       {/*glowing sphere with texture*/}
       <mesh ref={sunRef}>
-        <sphereGeometry args={[1, 64, 64]} />
+        <sphereGeometry args={[2, 64, 64]} />
         <meshStandardMaterial
           map={sunTexture}
           emissive={"#ffa724"}
@@ -26,7 +26,7 @@ export default function Sun() {
           position={[0, 0, 0]}
           color="white"
           intensity={50}
-          distance={10000}
+          distance={100}
           decay={0.8}
         />
       </mesh>
