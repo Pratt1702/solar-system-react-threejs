@@ -23,6 +23,7 @@ function TipBubble({ onDismiss }) {
   }, []);
 
   return (
+
     <div ref={tipRef} className="tip-bubble" onClick={onDismiss}>
       <h3 className="tip-bubble-title">💡 Tip:</h3>
       <ul className="tip-bubble-list">
@@ -35,7 +36,7 @@ function TipBubble({ onDismiss }) {
   );
 }
 
-function App() {
+export default function App() {
   const [showHint, setShowHint] = useState(false);
 
   useEffect(() => {
@@ -122,5 +123,3 @@ function App() {
     </>
   );
 }
-
-export default App;
