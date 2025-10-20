@@ -80,7 +80,7 @@ export default function SolarScene({ timescale = 100 }) {
         target={[0, 0, 0]} // Ensure camera rotates around the origin (the sun)
       />
 
-      <Stars radius={300} depth={50} count={15000} factor={10} />
+      <Stars radius={300} depth={50} count={20000} factor={10} />
     </Canvas>
   );
 }
