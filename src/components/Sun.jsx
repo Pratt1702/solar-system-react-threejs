@@ -25,9 +25,9 @@ export default function Sun() {
         <pointLight
           position={[0, 0, 0]}
           color="white"
-          intensity={100}
-          distance={1000}
-          decay={2}
+          intensity={50}
+          distance={10000}
+          decay={0.8}
         />
       </mesh>
     </group>

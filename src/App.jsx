@@ -23,7 +23,6 @@ function TipBubble({ onDismiss }) {
   }, []);
 
   return (
-
     <div ref={tipRef} className="tip-bubble" onClick={onDismiss}>
       <h3 className="tip-bubble-title">💡 Tip:</h3>
       <ul className="tip-bubble-list">
@@ -47,7 +46,7 @@ export default function App() {
   return (
     <>
       {showHint && <TipBubble onDismiss={() => setShowHint(false)} />}
-      <SolarScene timescale={100} />
+      <SolarScene timescale={50} />
       {/* Mini Footer */}
       <footer className="mini-footer">
         <span className="mini-footer-made">Made by Pratheek</span>

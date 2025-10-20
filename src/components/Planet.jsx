@@ -27,7 +27,7 @@ export default function Planet({
       <mesh ref={planetRef} position={[distance, 0, 0]}>
         <sphereGeometry args={[radius, 32, 32]} />
         <meshStandardMaterial map={texture} color={color} />
-        <ambientLight intensity={1} />
+        <ambientLight intensity={-0.4} />
         <meshStandardMaterial
           map={texture}
           emissive={"#222222"}
